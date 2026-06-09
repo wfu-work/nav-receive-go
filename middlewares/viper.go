@@ -3,7 +3,7 @@ package middlewares
 import (
 	"flag"
 	"fmt"
-	"nav-rtlogging-go/global"
+	"nav-receive-go/global"
 	"os"
 	"sync"
 

@@ -8,8 +8,8 @@ import (
 	"gorm.io/gorm/logger"
 
 	"log"
-	"nav-rtlogging-go/configs"
-	"nav-rtlogging-go/global"
+	"nav-receive-go/configs"
+	"nav-receive-go/global"
 	"sync"
 	"time"
 )
