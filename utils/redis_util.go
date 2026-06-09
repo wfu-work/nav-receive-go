@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"nav-rtlogging-go/global"
+	"nav-receive-go/global"
 	"sync"
 	"time"
 
@@ -19,7 +19,7 @@ type RedisUtil struct {
 var (
 	RedisUtilApp           *RedisUtil
 	once                   sync.Once
-	REDIS_RTLOGGING_PREFIX = "radar_rtlogging_"
+	REDIS_RTLOGGING_PREFIX = "nav_rtlogging_"
 	RedisNotExpire         = time.Duration(0) * time.Second
 	RedisDayExpire         = time.Duration(24*60*60) * time.Second
 	RedisHourExpire        = time.Duration(60*60) * time.Second
