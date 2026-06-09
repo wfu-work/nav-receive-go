@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  nav-receive-app:
+    build:
+      context: ./nav-receive-app
+      dockerfile: Dockerfile
+    image: nav-receive-app
+    container_name: nav-receive-app
+    hostname: nav-receive-app
+    ports:
+      - "3088:3088"
+    volumes:
+      - ./nav-receive-app/logback:/app/logback
+      - ${IOT_RAW_PATH}:/app/data/iot/raw
+    restart: always
+    networks:
+      - nav-net
+
+networks:
+  nav-net:
+    driver: bridge
