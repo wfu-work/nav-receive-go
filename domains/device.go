@@ -28,7 +28,7 @@ type Device struct {
 }
 
 func (Device) TableName() string {
-	return "nav_radar_device"
+	return "nav_device"
 }
 
 func (s Device) GetBaseData() BaseDataEntity {

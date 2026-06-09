@@ -15,7 +15,6 @@ var ServiceGroupApp = new(ServiceGroup)
 
 type ServiceGroup struct {
 	DeviceService
-	DeviceRtcmService
 }
 
 type HasBaseData interface {

@@ -43,7 +43,12 @@ func SetRtloggingSize(sncode string, length int) {
 }
 
 func WriteRtcmFile(sncode string, utcTime time.Time, bytes []byte) {
-	if strings.TrimSpace(sncode) == "" {
+	sncode = strings.TrimSpace(sncode)
+	if sncode == "" {
+		return
+	}
+	if !IsDeviceSncodeCached(sncode) {
+		LogUnknownDevice(sncode)
 		return
 	}
 	SetRtloggingSize(sncode, len(bytes))

@@ -19,13 +19,6 @@ func RtloggingSched() error {
 		fmt.Printf("❌device service find db error: %v\n", err)
 		return err
 	}
-	deviceRtcmList, err := services.DeviceRtcmServiceApp.ListAll(map[string]string{
-		"status": "1",
-	})
-	if err != nil {
-		fmt.Printf("❌device rtcm service find db error: %v\n", err)
-		return err
-	}
-	services.RefreshDeviceMappings(deviceList, deviceRtcmList)
+	services.RefreshDeviceCache(deviceList)
 	return nil
 }

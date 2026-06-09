@@ -119,10 +119,14 @@ func resolveRtloggingSncode(rtloggingData domains.RtloggingData[domains.GP], key
 		if candidate == "" {
 			continue
 		}
-		if sncode, ok := services.GetDeviceSncode(candidate); ok {
-			return sncode
+		if services.IsDeviceSncodeCached(candidate) {
+			return candidate
 		}
-		return candidate
+	}
+	for _, candidate := range candidates {
+		if candidate = strings.TrimSpace(candidate); candidate != "" {
+			return candidate
+		}
 	}
 	return ""
 }
